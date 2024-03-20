@@ -23,3 +23,5 @@ go.work
 
 # Config
 config/config.yaml
+
+main.go
