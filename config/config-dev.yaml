@@ -1,0 +1,11 @@
+###### 自行各大网站申请自己的key ######
+# 文心一言
+qianfan:
+  AccessKey: key
+  SecretKey: secret
+# 天行Api
+tianapi:
+  key: key
+# 高德开发平台
+amap:
+  key: key
