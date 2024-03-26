@@ -57,6 +57,7 @@ set GOOS=linux
 set GOARCH=amd64
 ```
 你设置完之后记得`go env`查看一下是否修改成功，这个很重要，要不然如果没有修改成功的话在Linux上执行的时候就会报二进制文件无法执行的问题。
+
 2. 打包
 ```shell
 # ChatBot可替换成你打包后的名称
