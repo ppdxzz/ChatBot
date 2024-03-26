@@ -66,11 +66,13 @@ go build -o ChatBot
 3. 文件授权
 
 `ChatBot`二进制可执行文件和`config/config.yaml`上传至目标服务器，放在统一目录下，`chmod +x ChatBot` 给文件设置为可执行权限，要不第一次没有权限无法执行。
+
 4. 启动
 ```shell
 # nohup 后台启动
 nohup ./ChatBot &
 ```
+
 5. 日志登录
 正常来讲，这样你就已经启动了服务，这个时候你应该在日志中找到打印出的登录URL并成功登录，ChatBot启动完毕。
 ```shell
