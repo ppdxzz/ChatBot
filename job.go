@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/eatmoreapple/openwechat"
+	"github.com/ppdxzz/go-holiday/holiday"
 	"github.com/robfig/cron/v3"
 	"time"
 )
@@ -12,8 +13,11 @@ func Job(jobGroups []*openwechat.Group) {
 	c := cron.New()
 	// Task1
 	_, err1 := c.AddFunc("0 10,13,15,17,22 * * *", func() {
-		for _, group := range jobGroups {
-			sendText(group, "「饮水提醒」朋友们，喝水时间到了呀，请及时喝水。")
+		date := time.Now().Format("2006-01-02")
+		if isWeekday, _ := holiday.IsWeekday(date); isWeekday {
+			for _, group := range jobGroups {
+				sendText(group, "「饮水提醒」朋友们，喝水时间到了呀，请及时喝水。")
+			}
 		}
 	})
 	if err1 != nil {
