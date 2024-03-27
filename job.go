@@ -12,7 +12,7 @@ func Job(jobGroups []*openwechat.Group) {
 	fmt.Println("定时任务启动->", time.Now().Format("2006-01-02 15:04:05"))
 	c := cron.New()
 	// Task1
-	_, err1 := c.AddFunc("0 10,13,15,17,22 * * *", func() {
+	_, err1 := c.AddFunc("0 10,15,17,22 * * *", func() {
 		date := time.Now().Format("2006-01-02")
 		if isWeekday, _ := holiday.IsWeekday(date); isWeekday {
 			for _, group := range jobGroups {
