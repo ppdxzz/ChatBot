@@ -13,9 +13,9 @@ func Job(jobGroups []*openwechat.Group) {
 	c := cron.New()
 	// Task1
 	_, err1 := c.AddFunc("0 10,15,17,22 * * *", func() {
-		date := time.Now().Format("2006-01-02")
-		if isWeekday, _ := holiday.IsWeekday(date); isWeekday {
-			for _, group := range jobGroups {
+		for _, group := range jobGroups {
+			date := time.Now().Format("2006-01-02")
+			if isWeekday, _ := holiday.IsWeekday(date); isWeekday {
 				sendText(group, "「饮水提醒」朋友们，喝水时间到了呀，请及时喝水。")
 			}
 		}
